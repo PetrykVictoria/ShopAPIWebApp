@@ -8,7 +8,6 @@ namespace ShopAPIWebApp.Models
         {
             Products = new List<Product>();
         }
-
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]

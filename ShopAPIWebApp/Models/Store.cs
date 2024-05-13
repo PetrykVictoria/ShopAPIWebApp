@@ -13,9 +13,7 @@ namespace ShopAPIWebApp.Models
         [Display(Name = "Телефон")]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage = "Поле не повинно бути порожнім")]
-        [Display(Name = "Час роботи")]
-        public string Schedule { get; set; }
+        public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
 
     }
 }

@@ -15,6 +15,7 @@ namespace ShopAPIWebApp.Model
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<ShopAPIWebApp.Models.Schedule> Schedule { get; set; } = default!;
     }
 }

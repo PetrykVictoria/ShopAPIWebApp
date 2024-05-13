@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/Lab2.js"></script>
+
+    <div class="container">
+
+        <div id="error" style="color: red; display: none;"></div>
+
+        <div id="addForm" class="edit-form" style="margin-bottom: 20px;">
+            <h2>Додати продукт</h2>
+            <div style="max-width: 400px;">
+                <input type="text" id="add-name" class="form-control mb-3" placeholder="Назва" required>
+                <input type="number" id="add-price" class="form-control mb-3" placeholder="Ціна" required>
+                <input type="number" id="add-categoryId" class="form-control mb-3" placeholder="ID категорії" required>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" id="add-isAvailable" class="form-check-input">
+                <label for="add-isAvailable" class="form-check-label">Наявність</label>
+            </div>
+            <button type="submit" onclick="addProduct()" class="btn btn-success">Додати</button>
+        </div>
+        <div id="editForm" class="edit-form" style="display: none; margin-bottom: 20px;">
+            <h2>Редагувати інформацію про продукт</h2>
+            <input type="hidden" id="edit-id">
+            <div style="max-width: 400px;">
+                <input type="text" id="edit-name" class="form-control mb-3 input-width" placeholder="Назва" required>
+                <input type="number" id="edit-price" class="form-control mb-3 input-width" placeholder="Ціна" required>
+                <input type="number" id="edit-categoryId" class="form-control mb-3 input-width" placeholder="ID категорії" required>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" id="edit-isAvailable" class="form-check-input">
+                <label for="edit-isAvailable" class="form-check-label">Наявність</label>
+            </div>
+            <button onclick="updateProduct()" class="btn btn-primary">Зберегти</button>
+            <button onclick="closeInput()" class="btn btn-secondary">Скасувати</button>
+        </div>
+
+        <h2>Список продуктів</h2>
+        <p id="counter"></p>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Назва</th>
+                    <th>Ціна</th>
+                    <th>Категорія</th>
+                    <th>Наявність</th>
+                    <th>Дії</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody id="products"></tbody>
+        </table>
+
+        <script src="js/lab2.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            getProducts();
+        </script>
+    </div>
+</body>
+</html>

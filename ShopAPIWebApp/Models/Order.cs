@@ -5,17 +5,22 @@ namespace ShopAPIWebApp.Models
 {
     public class Order
     {
-        public Order()
-        {
-            Products = new List<Product>();
-        }
+            public Order()
+            {
+                OrderProducts = new List<OrderProduct>();
+            }
 
-        public int Id { get; set; }
+            public int Id { get; set; }
 
-        [Required(ErrorMessage = "Поле не повинно бути порожнім")]
-        [Display(Name = "Статус")]
-        public bool Status { get; set; }
+            [Required(ErrorMessage = "Поле не повинно бути порожнім")]
+            [Display(Name = "Статус")]
+            public bool Status { get; set; }
+            
+            public int StoreId { get; set; }
+            public virtual Store Store { get; set; }
+            public virtual ICollection<OrderProduct> OrderProducts { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
     }
+
 }
+

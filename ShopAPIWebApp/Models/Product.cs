@@ -15,15 +15,14 @@ namespace ShopAPIWebApp.Models
         [Display(Name = "Ціна")]
         public int Price { get; set; }
 
-        [Display(Name = "Кількість")]
-        public int Quantity { get; set; }
-
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Наявність")]
         public bool IsAvailable { get; set; }
 
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
+        public virtual ICollection<OrderProduct>? OrderProducts { get; set; }
+
 
     }
 }
